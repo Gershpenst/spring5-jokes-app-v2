@@ -10,10 +10,15 @@ import guru.springframework.norris.chuck.ChuckNorrisQuotes;
  */
 @Service
 public class JokesChuckNorrisImpl implements Jokes {
+    
+    private final ChuckNorrisQuotes chuck_norris_joke;
+
+    public JokesChuckNorrisImpl() {
+        this.chuck_norris_joke = new ChuckNorrisQuotes();
+    }
 
     @Override
     public String getJokes() {
-        ChuckNorrisQuotes chuck_norris_joke = new ChuckNorrisQuotes();
         return chuck_norris_joke.getRandomQuote();
     }
     
